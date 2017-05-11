@@ -1,13 +1,10 @@
-$(function () {
+$( document ).ready(function() {
 
-  $(".light-switch input").bootstrapToggle(function () {
-    console.log('Clicked!')
+  $('div.light-switch input').change(function() {
+  console.log($(this).prop('checked'))
+
+  console.log( "Clicked!" );
+  window.location="http://0.0.0.0:5000/ledON";
   })
-
-
-  $('#toggle-one').bootstrapToggle(console.log('Clicked!'));
-
-
-
 
 });
