@@ -6,6 +6,7 @@ app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
 def index():
+    print('Running...')
     return render_template('index.html')
 
 
@@ -15,6 +16,7 @@ def LedOff():
 
 @app.route('/ledON')
 def LedOn():
+    print('on')
     return 'LED on'
 
 
