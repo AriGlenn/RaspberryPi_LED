@@ -9,9 +9,9 @@ def index():
     print('Running...')
     return render_template('index.html')
 
-
 @app.route('/ledOFF')
 def LedOff():
+    print('off')
     return 'LED off'
 
 @app.route('/ledON')
