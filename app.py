@@ -23,7 +23,7 @@ def index():
 @app.route('/ledOFF')
 def LedOff():
     print('off')
-    #GPIO.output(18,GPIO.LOW)
+    GPIO.output(21,GPIO.LOW)
     GPIO.output(ledNumber,False)
     return 'LED off'
 
@@ -31,7 +31,7 @@ def LedOff():
 def LedOn():
     print('on')
     GPIO.output(ledNumber,True)
-    #GPIO.output(18,GPIO.HIGH)
+    GPIO.output(21,GPIO.HIGH)
     return 'LED on'
 
 
