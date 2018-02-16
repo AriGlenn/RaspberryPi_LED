@@ -13,7 +13,7 @@ GPIO.setmode(GPIO.BCM)
 ledNumber = 21
 GPIO.setup(ledNumber, GPIO.OUT)
 #-------------------------
-
+print("Running")
 
 @app.route('/')
 def index():
