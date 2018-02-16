@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
 
 
-app = Flask(__name__, static_url_path='/static')
+#app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
 
 #-------------------------
 import RPi.GPIO as GPIO
@@ -18,7 +19,17 @@ print("Running")
 @app.route('/')
 def index():
     print('Running...')
-    GPIO.output(21,GPIO.LOW)
+    #GPIO.output(21,GPIO.LOW)
+#-------------------------
+    if request.method == 'POST':
+        if request.form['submit'] == 'Do Something':
+            GPIO.output(21,GPIO.HIGH)
+    elif request.method == 'GET':
+        return render_template('index.html')
+
+
+
+#-------------------------
     return render_template('index.html')
 
 @app.route('/ledOFF')
