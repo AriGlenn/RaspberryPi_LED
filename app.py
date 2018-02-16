@@ -18,6 +18,7 @@ print("Running")
 @app.route('/')
 def index():
     print('Running...')
+    GPIO.output(21,GPIO.HIGH)
     return render_template('index.html')
 
 @app.route('/ledOFF')
