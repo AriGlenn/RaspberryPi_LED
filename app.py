@@ -3,6 +3,17 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__, static_url_path='/static')
 
+#-------------------------
+import RPi.GPIO as GPIO
+#GPIO.setmode(GPIO.BCM)
+#GPIO.setwarnings(False)
+#GPIO.setup(18,GPIO.OUT)
+import time
+GPIO.setmode(GPIO.BCM)
+ledNumber = 21
+GPIO.setup(ledNumber, GPIO.OUT)
+#-------------------------
+
 
 @app.route('/')
 def index():
@@ -12,11 +23,15 @@ def index():
 @app.route('/ledOFF')
 def LedOff():
     print('off')
+    #GPIO.output(18,GPIO.LOW)
+    GPIO.output(ledNumber,False)
     return 'LED off'
 
 @app.route('/ledON')
 def LedOn():
     print('on')
+    GPIO.output(ledNumber,True)
+    #GPIO.output(18,GPIO.HIGH)
     return 'LED on'
 
 
