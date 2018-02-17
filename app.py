@@ -8,7 +8,6 @@ app = Flask(__name__, static_url_path='/static')
 
 #-------------------------
 GPIO.setmode(GPIO.BCM)
-GPIO.setmode(GPIO.BCM)
 ledNumber = 21
 GPIO.setup(ledNumber, GPIO.OUT)
 #-------------------------
@@ -16,27 +15,19 @@ print("Running")
 
 @app.route('/')
 def index():
-    print('Running...')
-    print('Home')
-    #GPIO.output(ledNumber,GPIO.LOW)
-#-------------------------
-#-------------------------
+    print('Running... Home')
     return render_template('index.html')
 
 @app.route('/ledOFF')
 def LedOff():
-    print('Running...')
-    print('Off')
+    print('Running... Off')
     GPIO.output(ledNumber,GPIO.LOW)
-        #GPIO.output(ledNumber,False)
     return 'LED off'
 
 @app.route('/ledON')
 def LedOn():
-    print('Running...')
-    print('On')
+    print('Running... On')
     GPIO.output(ledNumber,GPIO.HIGH)
-        #GPIO.output(ledNumber,True)
     return 'LED on'
 
 
