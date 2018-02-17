@@ -21,7 +21,7 @@ def index():
     #GPIO.output(ledNumber,GPIO.LOW)
 #-------------------------
 #-------------------------
-    #return render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/ledOFF')
 def LedOff():
