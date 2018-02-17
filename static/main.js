@@ -7,11 +7,11 @@ $( document ).ready(function() {
     if (localStorage.on_off == "off"){
       localStorage.on_off = "on";
       console.log(localStorage.on_off);
-      fetch("http://192.168.1.119:5000/ledON");
+      fetch("http://0.0.0.0:5000/ledON");
     }else{
       localStorage.on_off = "off";
       console.log(localStorage.on_off);
-      fetch("http://192.168.1.119:5000/ledOFF");
+      fetch("http://0.0.0.0:5000/ledOFF");
     }
   })
 });
