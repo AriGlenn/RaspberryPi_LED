@@ -18,7 +18,7 @@ print("Running")
 def index():
     print('Running...')
     print('Home')
-    GPIO.output(ledNumber,GPIO.LOW)
+    #GPIO.output(ledNumber,GPIO.LOW)
 #-------------------------
 #-------------------------
     return render_template('index.html')
@@ -27,7 +27,7 @@ def index():
 def LedOff():
     print('Running...')
     print('Off')
-    #GPIO.output(21,GPIO.LOW)
+    GPIO.output(ledNumber,GPIO.LOW)
         #GPIO.output(ledNumber,False)
     return 'LED off'
 
@@ -35,7 +35,7 @@ def LedOff():
 def LedOn():
     print('Running...')
     print('On')
-    #GPIO.output(21,GPIO.HIGH)
+    GPIO.output(ledNumber,GPIO.HIGH)
         #GPIO.output(ledNumber,True)
     return 'LED on'
 
