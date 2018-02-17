@@ -18,7 +18,7 @@ print("Running")
 def index():
     print('Running...')
     print('Home')
-    GPIO.output(ledNumber,GPIO.HIGH)
+    GPIO.output(ledNumber,GPIO.LOW)
 #-------------------------
 #-------------------------
     return render_template('index.html')
