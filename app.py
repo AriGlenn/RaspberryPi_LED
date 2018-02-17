@@ -7,10 +7,10 @@ app = Flask(__name__, static_url_path='/static')
 #app = Flask(__name__)
 
 #-------------------------
-#GPIO.setmode(GPIO.BCM)
-#GPIO.setmode(GPIO.BCM)
-#ledNumber = 21
-#GPIO.setup(ledNumber, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
+ledNumber = 21
+GPIO.setup(ledNumber, GPIO.OUT)
 #-------------------------
 print("Running")
 
@@ -18,7 +18,7 @@ print("Running")
 def index():
     print('Running...')
     print('Home')
-    GPIO.output(21,GPIO.HIGH)
+    GPIO.output(ledNumber,GPIO.HIGH)
 #-------------------------
 #-------------------------
     return render_template('index.html')
