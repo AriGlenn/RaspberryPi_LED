@@ -17,21 +17,24 @@ print("Running")
 @app.route('/')
 def index():
     print('Running...')
-    #GPIO.output(21,GPIO.LOW)
+    print('Home')
+    GPIO.output(21,GPIO.HIGH)
 #-------------------------
 #-------------------------
     return render_template('index.html')
 
 @app.route('/ledOFF')
 def LedOff():
-    print('off')
+    print('Running...')
+    print('Off')
     #GPIO.output(21,GPIO.LOW)
         #GPIO.output(ledNumber,False)
     return 'LED off'
 
 @app.route('/ledON')
 def LedOn():
-    print('on')
+    print('Running...')
+    print('On')
     #GPIO.output(21,GPIO.HIGH)
         #GPIO.output(ledNumber,True)
     return 'LED on'
